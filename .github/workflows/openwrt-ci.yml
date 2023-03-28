@@ -43,8 +43,14 @@ jobs:
       
       - name: Download lede        
         run: |          
-          git clone https://github.com/coolsnowwolf/lede          
-          mv ./lede/* ./     
+          git clone https://github.com/coolsnowwolf/ledecd lede
+
+          ./scripts/feeds update -a
+
+          ./scripts/feeds install -a
+
+          make menuconfig        
+         
       - name: Install Helloword        
         run: |          
           echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
