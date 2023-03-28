@@ -43,7 +43,8 @@ jobs:
       
       - name: Download lede        
         run: |          
-          git clone https://github.com/coolsnowwolf/ledecd lede
+          git clone https://github.com/coolsnowwolf/lede
+          cd lede
 
           ./scripts/feeds update -a
 
