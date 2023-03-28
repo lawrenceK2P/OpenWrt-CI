@@ -43,14 +43,10 @@ jobs:
       
       - name: Download lede        
         run: |          
-          git clone https://github.com/coolsnowwolf/lede
-          cd lede
-
-          ./scripts/feeds update -a
-
-          ./scripts/feeds install -a
-
-          make menuconfig        
+          git clone https://github.com/coolsnowwolf/lede          
+          cp .config ./lede/.config          
+          mv ./lede/* ./
+       
          
       - name: Install Helloword        
         run: |          
